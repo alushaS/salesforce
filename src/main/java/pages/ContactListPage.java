@@ -12,6 +12,7 @@ public class ContactListPage extends BasePage{
     public static final String TABLE_XPATH = "//table";
     public static final String CONTACT_NAME_FIELD_XPATH = TABLE_XPATH + "//a[contains(@title, '%s')]";
     public static final String ACCOUNT_NAME_ON_CONTACT_PAGE_XPATH = TABLE_XPATH + "//a[contains(@title, '%s')]";
+    public static final String CONTACT_PHONE_XPATH = TABLE_XPATH + "//span[contains(@class, 'forceOutputPhone')]";
 
     public ContactListPage openPage(String url) {
         driver.get(url);
@@ -25,5 +26,11 @@ public class ContactListPage extends BasePage{
     public String getExistAccountName(String accountName) {
         return driver.findElement(By.xpath(String.format(ACCOUNT_NAME_ON_CONTACT_PAGE_XPATH, accountName))).getText();
     }
+
+    public String getContactPhone(String phone) {
+        return driver.findElement(By.xpath(String.format(CONTACT_PHONE_XPATH, phone))).getText();
+    }
+
+
 
 }

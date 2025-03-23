@@ -37,11 +37,12 @@ public class ContactTest extends BaseTest{
                 .createNewContact(contact);
         contactListPage.openPage(CONTACT_LIST_URL);
         Assert.assertEquals(contactListPage.getExistContactName(contact.getContactLastName()), (contact.getContactLastName()));
-        Assert.assertEquals(accountListPage.getExistAccountName(contact.getAccountName()), contact.getAccountName());
+        Assert.assertEquals(contactListPage.getExistAccountName(contact.getAccountName()), contact.getAccountName());
+        Assert.assertEquals(contactListPage.getContactPhone(contact.getPhone()), contact.getPhone());
     }
 
     @Test
-    public void checkNewContactData() {
+    public void checkNewContactTest() {
         Account account = new Account();
         account.setAccountName("account" + random.nextInt());
         account.setWebSite("website");
@@ -61,5 +62,6 @@ public class ContactTest extends BaseTest{
         contactPage.contactPageId(contact);
         Assert.assertEquals(contactListPage.getExistContactName(contact.getContactLastName()), contact.getContactLastName());
         Assert.assertEquals(contactPage.getStringValueByName(account.getAccountName()), account.getAccountName());
+        Assert.assertEquals(contactListPage.getContactPhone(contact.getPhone()), contact.getPhone());
     }
 }
