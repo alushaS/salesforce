@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
     public class ContactPage extends BasePage{
 
+        public static final String DATA_BY_FIELD_NAME_XPATH = "//a[contains(@href, '/lightning/r/Account/') and contains(text(), '%s')]";
+
         @FindBy(id = "lastName")
         public WebElement lastNameInput;
 
@@ -36,8 +38,6 @@ import org.openqa.selenium.support.FindBy;
             contactLink.click();
             return new HomePage(driver);
         }
-
-        public static final String DATA_BY_FIELD_NAME_XPATH = "//a[contains(@href, '/lightning/r/Account/') and contains(text(), '%s')]";
 
         public String getStringValueByName(String name){
             return driver.findElement(By.xpath(String.format(DATA_BY_FIELD_NAME_XPATH, name))).getText();

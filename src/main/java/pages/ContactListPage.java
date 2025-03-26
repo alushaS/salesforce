@@ -30,7 +30,4 @@ public class ContactListPage extends BasePage{
     public String getContactPhone(String phone) {
         return driver.findElement(By.xpath(String.format(CONTACT_PHONE_XPATH, phone))).getText();
     }
-
-
-
 }

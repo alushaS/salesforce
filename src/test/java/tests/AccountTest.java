@@ -51,6 +51,4 @@ public class AccountTest extends BaseTest{
         Assert.assertSame(accountListPage.getExistAccountOwnerByAccountName(account.getAccountName()), "AStas");
 
     }
-
-
 }

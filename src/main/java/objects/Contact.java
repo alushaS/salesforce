@@ -8,7 +8,6 @@ import org.apache.logging.log4j.core.config.AppenderRef;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Contact {
 
     private String contactLastName;
